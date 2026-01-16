@@ -11,7 +11,7 @@ export function SignboardShell({ backgroundImage, children }: Props) {
   return (
     <div className="fixed inset-0 overflow-hidden">
 
-      {/* 🌄 BACKGROUND (visual only) */}
+      {/* BACKGROUND */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -22,16 +22,8 @@ export function SignboardShell({ backgroundImage, children }: Props) {
         }}
       />
 
-      {/* 🔒 BOARD MASK (ONLY CANVAS ALLOWED) */}
-      <div
-        id="board-mask"
-        className="absolute left-1/2 top-1/2 z-10 overflow-hidden pointer-events-none"
-        style={{
-          width: 1676,      // rounded
-          height: 925,
-          transform: "translate(-50%, -50%)"
-        }}
-      >
+      {/* NORMAL UI LAYER */}
+      <div className="relative z-10 w-full h-full">
         {children}
       </div>
     </div>
